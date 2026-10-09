@@ -8,9 +8,9 @@ DBT_CI_CD_DEMO:
       user: "{{ env_var('SNOWFLAKE_USER')}}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: "{{ env_var('SNOWFLAKE_ROLE') }}"
-      database: DEMO
+      database: SNOWFLAKE_SAMPLE_DATA
       warehouse: COMPUTE_WH
-      schema: SRC
+      schema: TPCH_SF1
       client_session_keep_alive: False
       query_tag: github_action_query
 
