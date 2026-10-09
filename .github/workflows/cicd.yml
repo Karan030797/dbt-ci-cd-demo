@@ -32,9 +32,9 @@ jobs:
       - name: Debug dbt connection
         run:  dbt debug --profiles-dir ./
 
-      - name: Run dbt test
-        run: dbt test --profiles-dir ./
-
-      - name: dbt run
+      - name: Run dbt models
         run: dbt run --profiles-dir ./
+
+      - name: Run dbt tests
+        run: dbt test --profiles-dir ./
         
