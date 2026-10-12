@@ -1,17 +1,60 @@
+# DBT_CI_CD_DEMO:
+#   target: dev
+#   outputs:
+#     dev:
+#       type: snowflake
+#       threads: 1
+#       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+#       user: "{{ env_var('SNOWFLAKE_USER')}}"
+#       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+#       role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+#       database: DEMO
+#       warehouse: COMPUTE_WH
+#       schema: POC
+#       client_session_keep_alive: False
+#       query_tag: github_action_query 
+
+
 DBT_CI_CD_DEMO:
   target: dev
+
   outputs:
     dev:
       type: snowflake
       threads: 1
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
-      user: "{{ env_var('SNOWFLAKE_USER')}}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       role: "{{ env_var('SNOWFLAKE_ROLE') }}"
       database: DEMO
       warehouse: COMPUTE_WH
-      schema: POC
-      client_session_keep_alive: False
-      query_tag: github_action_query
+      schema: POC_DEV
+      client_session_keep_alive: false
+      query_tag: github_action_dev
 
+    qa:
+      type: snowflake
+      threads: 2
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      database: DEMO
+      warehouse: COMPUTE_WH
+      schema: POC_QA
+      client_session_keep_alive: false
+      query_tag: github_action_qa
+
+    prod:
+      type: snowflake
+      threads: 4
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      database: DEMO
+      warehouse: COMPUTE_WH
+      schema: POC_PROD
+      client_session_keep_alive: false
+      query_tag: github_action_prod
 
