@@ -3,9 +3,9 @@ WITH orderdata AS (
 )
 
 SELECT
-    PS_partkey,
-    PS_suppkey,
-    PS_availqty,
-    PS_supplycost
+    ps_partkey,
+    ps_suppkey,
+    ps_availqty,
+    ps_supplycost
 FROM
     orderdata
