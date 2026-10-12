@@ -5,7 +5,7 @@ WITH orderdata AS (
 SELECT
     ps_partkey,
     ps_suppkey,
-    ps_availqty,
+    -- ps_availqty,
     ps_supplycost
 FROM
     orderdata
