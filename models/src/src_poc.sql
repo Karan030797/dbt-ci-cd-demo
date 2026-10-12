@@ -1,12 +1,11 @@
 WITH orderdata AS (
-    SELECT * FROM snowflake_sample_data.tpch_sf1.part
+    SELECT * FROM snowflake_sample_data.tpch_sf1.partsupp
 )
 
 SELECT
-    o_custkey,
-    o_orderkey,
-    o_orderdate,
-    o_totalprice,
-    o_orderstatus
+    PS_partkey,
+    PS_suppkey,
+    PS_availqty,
+    PS_supplycost
 FROM
     orderdata
