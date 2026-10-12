@@ -5,7 +5,7 @@ WITH orderdata AS (
 SELECT
     o_custkey,
     o_orderkey,
-    o_orderdate,
+    o_totalprice,
     o_orderstatus
 FROM
     orderdata
