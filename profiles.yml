@@ -16,7 +16,7 @@
 
 
 DBT_CI_CD_DEMO:
-  target: qa
+  target: prod
 
   outputs:
     dev:
