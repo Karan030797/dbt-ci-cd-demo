@@ -6,7 +6,6 @@ SELECT
     o_custkey,
     o_orderkey,
     o_orderdate,
-    
     o_orderstatus
 FROM
     orderdata
